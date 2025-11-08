@@ -1,0 +1,221 @@
+/* =============================
+  Responsive helpers for pages
+  (Paste at end of index.css)
+============================= */
+
+/* Base small tweaks to ensure consistent box-sizing for elements we target */
+.page { box-sizing: border-box; }
+
+/* General container sizing used in many pages */
+.page > .container,
+.page .contact-card,
+.page .content-box,
+.page .admissions-wrapper,
+.page .dashboard-container,
+.page .auth-container,
+.page .card-container > .card,
+.page .card {
+  box-sizing: border-box;
+}
+
+/* ---------- Desktop / default (no change) ---------- */
+/* keep your inline styles; we only add responsive rules below */
+
+/* ---------- Tablet (<=1024px) ---------- */
+@media (max-width: 1024px) {
+
+  /* Reduce large paddings across pages */
+  .page,
+  .page .content-box,
+  .page .admissions-wrapper,
+  .page .contact-card,
+  .page .auth-container {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+
+  /* hero sections: reduce vertical padding */
+  .hero-section, .hero-section[style] {
+    padding: 3.5rem 1.25rem !important;
+    background-position: center !important;
+  }
+
+  /* Hero headings scale down slightly */
+  .hero-section .heroTitle,
+  .hero-content .heroTitle,
+  .hero-section h1,
+  .hero-content h1 {
+    font-size: clamp(1.8rem, 2.6vw, 2.6rem) !important;
+    line-height: 1.15 !important;
+  }
+
+  /* Cards - keep multi-column but smaller */
+  .card-container {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+    gap: 1.25rem !important;
+  }
+
+  .course-grid {
+    gap: 1.25rem !important;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)) !important;
+  }
+
+  /* Admissions wrapper width */
+  .admissions-wrapper {
+    padding: 2rem !important;
+  }
+
+  /* Contact card: reduce blur/size impact */
+  .contact-card {
+    padding: 2rem !important;
+    max-width: 680px !important;
+  }
+
+  /* Buttons: make them easier to tap but keep inline width if given */
+  .page button {
+    padding: 0.85rem 1.25rem !important;
+    font-size: 1rem !important;
+  }
+
+  /* Auth forms */
+  .auth-container {
+    max-width: 420px !important;
+    margin: 2rem auto !important;
+    padding: 1.5rem !important;
+  }
+
+  /* Modal content centering */
+  .modal-overlay {
+    padding: 1rem;
+  }
+
+  .modal-content {
+    max-width: 520px !important;
+    width: 100% !important;
+  }
+}
+
+/* ---------- Mobile (<=768px) ---------- */
+@media (max-width: 768px) {
+
+  /* Full-width content on very small screens */
+  .page,
+  .page .content-box,
+  .page .admissions-wrapper,
+  .page .contact-card,
+  .page .auth-container,
+  .page .dashboard-container {
+    padding-left: 0.875rem !important;
+    padding-right: 0.875rem !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* hero: smaller vertical height so content fits above the fold */
+  .hero-section {
+    padding: 2.25rem 0.75rem !important;
+    min-height: auto !important;
+    background-position: center !important;
+  }
+
+  /* hero text smaller and centered */
+  .hero-content,
+  .hero-section .heroContentOverlay,
+  .hero-section .heroContentOverlay {
+    text-align: center !important;
+  }
+
+  .hero-section h1,
+  .hero-content h1,
+  .heroTitle,
+  .hero-section .heroTitle,
+  .hero-content .heroTitle {
+    font-size: clamp(1.4rem, 5vw, 1.95rem) !important;
+    margin-bottom: 0.6rem !important;
+  }
+
+  .hero-section p,
+  .hero-content p,
+  .heroSubtitle,
+  .hero-section .heroSubtitle {
+    font-size: clamp(0.95rem, 3.2vw, 1.05rem) !important;
+  }
+
+  /* Make grids single-column where needed */
+  .card-container,
+  .course-grid,
+  .courseGrid,
+  .page .cardContainer,
+  .page .card-container {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Ensure each card uses full width and reduced padding */
+  .card,
+  .page .card,
+  .contact-card,
+  .page .content-box,
+  .page .admissions-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 1rem !important;
+    border-radius: 10px !important;
+  }
+
+  /* Buttons full width for touch */
+  .page button,
+  .auth-container .btn,
+  .auth-container button,
+  .applyButton,
+  .apply-button {
+    display: block !important;
+    width: 100% !important;
+    max-width: 420px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Social links stack vertically on small screens */
+  .socials {
+    flex-direction: column !important;
+    gap: 0.6rem !important;
+  }
+
+  /* Modal adjustments */
+  .modal-overlay {
+    align-items: flex-end !important;
+    padding-bottom: 1rem !important;
+  }
+  .modal-content {
+    border-radius: 12px !important;
+    margin: 0 auto !important;
+    width: calc(100% - 2rem) !important;
+  }
+
+  /* Auth inputs spacing */
+  .auth-container input,
+  .auth-container .input,
+  input[type="email"],
+  input[type="password"] {
+    font-size: 1rem !important;
+    padding: 0.72rem !important;
+  }
+
+  /* NotFound / small text */
+  .notfound-container {
+    padding: 1.25rem !important;
+  }
+}
+
+/* Accessibility: make focus outlines visible on small screens too */
+@media (max-width: 768px) {
+  :focus {
+    outline: 3px solid rgba(0,123,255,0.18) !important;
+    outline-offset: 2px !important;
+  }
+}
+/* ============================= Responsive helpers for pages ============================= */
