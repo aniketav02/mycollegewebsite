@@ -31,7 +31,7 @@ const Login = ({ login }) => {
   };
 
   return (
-    <div style={styles.container}>
+    <div className="page auth-container" style={styles.container}>
       <h2>Login to Your Account</h2>
       <form onSubmit={handleSubmit} style={styles.form}>
         <input

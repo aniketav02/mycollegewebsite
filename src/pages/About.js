@@ -3,10 +3,10 @@ import { FaCheckCircle } from "react-icons/fa";
 
 const About = () => {
   return (
-    <div style={styles.page}>
+    <div className="page" style={styles.page}>
       {/* Hero Section */}
-      <div style={styles.heroSection}>
-        <h1 style={styles.heroTitle}>About Us</h1>
+      <div className="hero-section" style={styles.heroSection}>
+        <h1 className="heroTitle" style={styles.heroTitle}>About Us</h1>
         <p style={styles.heroSubtitle}>
           Empowering students through excellence in engineering education
         </p>
@@ -14,7 +14,7 @@ const About = () => {
       </div>
 
       {/* About Content Section */}
-      <div style={styles.contentBox}>
+      <div className="content-box" style={styles.contentBox}>
         <p style={styles.paragraph}>
           <strong>
             D. Y. Patil College of Engineering & Technology, Kasaba Bawada,
@@ -35,7 +35,7 @@ const About = () => {
           culture in the Institute. Architecture department of the Institute is
           ranked amongst the top 13 Architecture Colleges in India by Outlook
           India and ranked 21st by India Today in 2021. Three UG programmes viz.,
-          B. Tech (Computer Science and Engineering), B. Tech. (Electronics &
+          B. Tech (Computer Science and Engineering), B. Tech. (Electronics &amp;
           Telecommunication Engineering) and B. Tech. (Mechanical Engineering)
           is re-accredited by National Board of Accreditation (NBA), New Delhi
           for a period of three years from 2022 to 2025.
@@ -43,7 +43,7 @@ const About = () => {
 
         <h2 style={styles.heading}>Our Vision & Mission</h2>
         <p style={styles.paragraph}>
-          Our mission is to{" "}
+          Our mission is{" "}
           <em>empower students with knowledge, skills, and values</em> to lead
           and innovate in a global society. We focus on holistic development
           through state-of-the-art infrastructure, experienced faculty, and

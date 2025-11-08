@@ -1,4 +1,4 @@
-//app.js
+// app.js
 import React, { useState } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 
@@ -25,7 +25,6 @@ const App = () => {
     <>
       <Navbar user={user} logout={logout} />
       <main className="container" style={{ minHeight: "80vh" }}>
-
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

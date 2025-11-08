@@ -35,7 +35,7 @@ const Courses = () => {
   const [selectedCourse, setSelectedCourse] = useState(null);
 
   return (
-    <div style={styles.page}>
+    <div className="page" style={styles.page}>
       {/* Header */}
       <div style={styles.header}>
         <h1 style={styles.title}>Courses Offered</h1>
@@ -46,13 +46,14 @@ const Courses = () => {
       </div>
 
       {/* Courses Grid */}
-      <div style={styles.cardContainer}>
+      <div className="card-container" style={styles.cardContainer}>
         {courses.map((course, index) => (
           <div
             key={index}
             style={styles.card}
             onMouseEnter={(e) => handleHover(e, true)}
             onMouseLeave={(e) => handleHover(e, false)}
+            className="card"
           >
             <div style={styles.cardHeader}>
               <div style={styles.iconCircle}>{index + 1}</div>
@@ -79,9 +80,10 @@ const Courses = () => {
 
       {/* Popup Modal */}
       {selectedCourse && (
-        <div style={styles.modalOverlay} onClick={() => setSelectedCourse(null)}>
+        <div style={styles.modalOverlay} className="modal-overlay" onClick={() => setSelectedCourse(null)}>
           <div
             style={styles.modal}
+            className="modal-content"
             onClick={(e) => e.stopPropagation()} // prevent background close
           >
             <h2 style={styles.modalTitle}>{selectedCourse.title}</h2>

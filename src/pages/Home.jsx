@@ -38,13 +38,13 @@ const courses = [
 
 const Home = () => {
   return (
-    <div style={styles.page}>
+    <div className="page" style={styles.page}>
       {/* Hero Section */}
-      <section style={styles.hero}>
+      <section className="hero" style={styles.hero}>
         <div style={styles.overlay}></div>
 
-        <div style={styles.heroContentOverlay}>
-          <h1 style={styles.heroTitle}>
+        <div className="heroContentOverlay" style={styles.heroContentOverlay}>
+          <h1 className="heroTitle" style={styles.heroTitle}>
             Welcome to{" "}
             <span style={styles.collegeName}>D. Y. Patil College</span> of
             Engineering & Technology, Kolhapur
@@ -65,9 +65,9 @@ const Home = () => {
       </section>
 
       {/* Courses Section */}
-      <section style={styles.coursesSection}>
+      <section className="page content-box" style={styles.coursesSection}>
         <h2 style={styles.sectionTitle}>Our Popular Courses</h2>
-        <div style={styles.courseGrid}>
+        <div className="course-grid" style={styles.courseGrid}>
           {courses.map((course) => (
             <CourseCard key={course.id} course={course} />
           ))}

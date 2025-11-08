@@ -3,8 +3,8 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn, FaEnvelope } from "react-icons/
 
 const Contact = () => {
   return (
-    <div style={styles.page}>
-      <div style={styles.card}>
+    <div className="page contact-card" style={styles.page}>
+      <div style={styles.card} className="contact-card-inner">
         <h1 style={styles.title}>Contact Us</h1>
 
         <p style={styles.info}>
@@ -21,7 +21,7 @@ const Contact = () => {
         </p>
 
         <h3 style={styles.socialTitle}>Follow us on:</h3>
-        <div style={styles.socials}>
+        <div style={styles.socials} className="socials">
           <a href="https://www.facebook.com/dypcetkolhapur/" target="_blank" rel="noopener noreferrer" style={{ ...styles.socialLink, backgroundColor: "#3b5998" }}>
             <FaFacebookF style={{ marginRight: "8px" }} /> Facebook
           </a>
@@ -109,5 +109,4 @@ const styles = {
   },
 };
 
-// Hover effect using inline styles requires JS, or you can use styled-components or Tailwind for better effect
 export default Contact;

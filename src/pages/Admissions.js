@@ -7,7 +7,7 @@ const Admissions = () => {
   };
 
   return (
-    <div style={styles.page}>
+    <div className="page admissions-wrapper" style={styles.page}>
       <motion.div
         style={styles.wrapper}
         initial={{ opacity: 0, y: 40 }}

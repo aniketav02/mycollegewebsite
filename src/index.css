@@ -6,7 +6,6 @@
 /* Base small tweaks to ensure consistent box-sizing for elements we target */
 .page { box-sizing: border-box; }
 
-/* General container sizing used in many pages */
 .page > .container,
 .page .contact-card,
 .page .content-box,
@@ -16,6 +15,32 @@
 .page .card-container > .card,
 .page .card {
   box-sizing: border-box;
+}
+
+/* Ensure some inline styles can be overridden by CSS for responsiveness */
+.page .card,
+.page .content-box,
+.page .contact-card,
+.page .auth-container,
+.page .wrapper,
+.page .courses-grid,
+footer .container {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Make hero images and cards responsive even if inline heights exist */
+.page img,
+.page .image,
+.page .imageWrapper img {
+  max-width: 100% !important;
+  height: auto !important;
+  object-fit: cover !important;
+}
+
+/* Navbar: ensure hamburger displays on small screens even if JS inline removed it earlier */
+.menu-toggle {
+  display: none;
 }
 
 /* ---------- Desktop / default (no change) ---------- */
@@ -35,7 +60,7 @@
   }
 
   /* hero sections: reduce vertical padding */
-  .hero-section, .hero-section[style] {
+  .hero-section, .hero, .hero-section[style] {
     padding: 3.5rem 1.25rem !important;
     background-position: center !important;
   }
@@ -50,7 +75,10 @@
   }
 
   /* Cards - keep multi-column but smaller */
-  .card-container {
+  .card-container,
+  .cardContainer,
+  .courseGrid,
+  .course-grid {
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
     gap: 1.25rem !important;
   }
@@ -112,7 +140,8 @@
   }
 
   /* hero: smaller vertical height so content fits above the fold */
-  .hero-section {
+  .hero-section,
+  .hero {
     padding: 2.25rem 0.75rem !important;
     min-height: auto !important;
     background-position: center !important;
@@ -121,7 +150,8 @@
   /* hero text smaller and centered */
   .hero-content,
   .hero-section .heroContentOverlay,
-  .hero-section .heroContentOverlay {
+  .hero-section .heroContentOverlay,
+  .heroContentOverlay {
     text-align: center !important;
   }
 
@@ -180,9 +210,40 @@
   }
 
   /* Social links stack vertically on small screens */
-  .socials {
+  .socials,
+  .page .socials {
     flex-direction: column !important;
     gap: 0.6rem !important;
+    align-items: center !important;
+  }
+
+  /* Footer fix */
+  footer .container {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 1rem !important;
+  }
+  footer .right {
+    text-align: center !important;
+  }
+  footer .socials {
+    justify-content: center !important;
+  }
+
+  /* Navbar: show hamburger and hide normal menu overflow if small */
+  .menu {
+    display: none !important;
+  }
+  .menu-toggle {
+    display: block !important;
+  }
+  .menu.menu-open {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px;
+    width: 100%;
+    align-items: center;
+    padding: 10px 0;
   }
 
   /* Modal adjustments */

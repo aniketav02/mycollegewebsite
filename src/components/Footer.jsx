@@ -4,7 +4,7 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn, FaEnvelope } from "react-icons/
 const Footer = () => {
   return (
     <footer style={styles.footer}>
-      <div style={styles.container}>
+      <div className="footer-container" style={styles.container}>
         {/* Left Section */}
         <div style={styles.left}>
           <h3 style={styles.brand}>D. Y. Patil College of Engineering & Technology</h3>
@@ -17,9 +17,9 @@ const Footer = () => {
         </div>
 
         {/* Right Section */}
-        <div style={styles.right}>
+        <div className="right" style={styles.right}>
           <h4 style={styles.connectTitle}>Connect With Us</h4>
-          <div style={styles.socials}>
+          <div className="socials" style={styles.socials}>
             <a
               href="https://www.facebook.com/dypcetkolhapur/"
               target="_blank"
@@ -54,7 +54,6 @@ const Footer = () => {
       {/* Bottom Bar */}
       <div style={styles.bottomBar}>
         <p>© 2025 DYP Group. All rights reserved.</p>
-      
       </div>
     </footer>
   );
@@ -81,6 +80,7 @@ const styles = {
   left: {
     flex: "1 1 300px",
     marginBottom: "1.5rem",
+    minWidth: 260,
   },
   brand: {
     fontSize: "1.3rem",
@@ -100,6 +100,7 @@ const styles = {
   right: {
     flex: "1 1 200px",
     textAlign: "right",
+    minWidth: 180,
   },
   connectTitle: {
     fontSize: "1.1rem",

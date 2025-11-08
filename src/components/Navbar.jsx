@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import logo from "../assets/dypcetlogo.jpeg"; // Ensure the logo is inside src/assets/
+import logo from "../assets/dypcetlogo.jpeg"; // Ensure the logo exists in src/assets/
 
 const Navbar = ({ user, logout }) => {
   const navigate = useNavigate();
@@ -73,42 +73,100 @@ const Navbar = ({ user, logout }) => {
           alignItems: "center",
           justifyContent: "space-between",
           flexWrap: "wrap",
-          backdropFilter: "blur(10px)", // frosted glass effect
-          WebkitBackdropFilter: "blur(10px)", // for Safari
+          backdropFilter: "blur(10px)",
+          WebkitBackdropFilter: "blur(10px)",
         }}
       >
-        {/* Logo spacer */}
+        {/* Left Logo Spacer */}
         <div style={{ width: "75px" }}></div>
 
-        {/* Nav Links (Centered) */}
+        {/* ===== Hamburger Menu (Mobile) ===== */}
+        <button
+          onClick={() => setOpen(!open)}
+          className="menu-toggle"
+          style={{
+            background: "transparent",
+            border: "none",
+            color: "white",
+            fontSize: "1.8rem",
+            cursor: "pointer",
+            /* display removed so CSS controls it */
+          }}
+          aria-label="Toggle navigation menu"
+        >
+          ☰
+        </button>
+
+        {/* ===== Navigation Links ===== */}
         <ul
+          className={`menu ${open ? "menu-open" : ""}`}
           style={{
             listStyle: "none",
             display: "flex",
-            flexDirection: "row",
+            flexDirection: open ? "column" : "row",
             justifyContent: "center",
             alignItems: "center",
             gap: "20px",
             margin: 0,
             padding: "5px 10px",
             flexGrow: 1,
-            borderRadius: "10px", // rounded blur background
+            borderRadius: "10px",
           }}
         >
-          <li><NavLink to="/" style={linkStyle} onClick={handleLinkClick}>Home</NavLink></li>
-          <li><NavLink to="/about" style={linkStyle} onClick={handleLinkClick}>About Us</NavLink></li>
-          <li><NavLink to="/admissions" style={linkStyle} onClick={handleLinkClick}>Admissions</NavLink></li>
-          <li><NavLink to="/courses" style={linkStyle} onClick={handleLinkClick}>Courses</NavLink></li>
-          <li><NavLink to="/contact" style={linkStyle} onClick={handleLinkClick}>Contact</NavLink></li>
-          
+          <li>
+            <NavLink to="/" style={linkStyle} onClick={handleLinkClick}>
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/about" style={linkStyle} onClick={handleLinkClick}>
+              About Us
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/admissions" style={linkStyle} onClick={handleLinkClick}>
+              Admissions
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/courses" style={linkStyle} onClick={handleLinkClick}>
+              Courses
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/contact" style={linkStyle} onClick={handleLinkClick}>
+              Contact
+            </NavLink>
+          </li>
+
           {!user ? (
             <>
-              <li><NavLink to="/login" style={linkStyle} onClick={handleLinkClick}>Login</NavLink></li>
-              <li><NavLink to="/register" style={linkStyle} onClick={handleLinkClick}>Register</NavLink></li>
+              <li>
+                <NavLink to="/login" style={linkStyle} onClick={handleLinkClick}>
+                  Login
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/register"
+                  style={linkStyle}
+                  onClick={handleLinkClick}
+                >
+                  Register
+                </NavLink>
+              </li>
             </>
           ) : (
             <>
-              <li><NavLink to="/dashboard" style={linkStyle} onClick={handleLinkClick}>Dashboard</NavLink></li>
+              <li>
+                <NavLink
+                  to="/dashboard"
+                  style={linkStyle}
+                  onClick={handleLinkClick}
+                >
+                  Dashboard
+                </NavLink>
+              </li>
               <li>
                 <button
                   onClick={handleLogout}
@@ -126,14 +184,14 @@ const Navbar = ({ user, logout }) => {
           )}
         </ul>
 
-        {/* Right spacer for logo alignment */}
+        {/* Right Spacer for Symmetry */}
         <div style={{ width: "75px" }}></div>
       </nav>
     </header>
   );
 };
 
-// Reusable styles
+// ===== Reusable NavLink Styles =====
 const linkStyle = {
   color: "white",
   textDecoration: "none",

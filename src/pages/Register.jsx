@@ -89,7 +89,7 @@ const Register = ({ login }) => {
   const pwdStrength = passwordStrength(form.password);
 
   return (
-    <section aria-labelledby="register-title" style={styles.container}>
+    <section aria-labelledby="register-title" className="page auth-container" style={styles.container}>
       <h2 id="register-title" style={{ marginBottom: "1rem" }}>
         Create an Account
       </h2>

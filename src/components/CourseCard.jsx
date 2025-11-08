@@ -1,3 +1,4 @@
+// same as your CourseCard.jsx but exported unchanged; it works fine with CSS overrides
 import React, { useState } from "react";
 
 const CourseCard = ({ course }) => {
@@ -148,6 +149,7 @@ const CourseCard = ({ course }) => {
         style={styles.card}
         onMouseEnter={(e) => handleHover(e, true)}
         onMouseLeave={(e) => handleHover(e, false)}
+        className="card"
       >
         <div style={styles.imageWrapper}>
           <img src={course.image} alt={course.title} style={styles.image} />

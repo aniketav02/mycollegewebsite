@@ -2,7 +2,7 @@ import React from "react";
 
 const Dashboard = ({ user, logout }) => {
   return (
-    <div style={styles.container}>
+    <div className="page dashboard-container" style={styles.container}>
       <div style={styles.welcomeBox}>
         <h2 style={styles.heading}>Welcome, <span style={styles.userName}>{user.name}</span>!</h2>
         <p style={styles.email}>Email: <a href={`mailto:${user.email}`} style={styles.emailLink}>{user.email}</a></p>
